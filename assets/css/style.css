@@ -247,7 +247,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/shool_background.png") top right no-repeat;
+  background: url("../img/shool_bg.jpg") top right no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -1109,6 +1109,15 @@ section {
     padding-top: 20px;
   }
 }
+
+/*--------
+# Contact Form
+----------------*/
+.contact-form{
+  display: flex;
+}
+
+
 
 /*--------------------------------------------------------------
 # Footer
