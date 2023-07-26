@@ -1,0 +1,49 @@
+.body{
+  padding:0 1rem;
+  .firstBlock{
+    display: flex;
+    align-items: center;
+    margin: 5rem 0;
+    .pic{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      flex: 1;
+      .picImg{
+        width: 16rem;
+        height: 16rem;
+        object-fit: cover;
+        border-radius: 1rem;
+      }
+    }
+    .picDesc{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      .h1{
+        text-transform: uppercase;
+        color: #45505b;
+        font-size: 2.5rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+      .h2{
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .h3{
+        display: flex;
+      }
+      .h3Label{
+        margin-left:.5rem;
+      }
+    }
+  }
+  .detailsBlock{
+    
+  }
+}
