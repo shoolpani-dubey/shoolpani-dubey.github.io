@@ -1,8 +1,12 @@
 .wrapper{
-    display: flex;
+    padding: 6rem;
+    border-bottom: 1px solid lightgrey;
     .title{
         font-size: 1.5rem;
-        flex:1
+        flex:1;
+        color: #173b6c;
+        font-size: 2rem;
+        font-weight: bold;
     }
     .desc{
         margin:0;

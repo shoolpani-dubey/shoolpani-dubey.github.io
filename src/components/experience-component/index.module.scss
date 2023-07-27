@@ -1,0 +1,25 @@
+.expCont{
+    padding: 2rem 1rem;
+    line-height: 1.5rem;
+    .expTitle{
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-family: "Poppins", sans-serif;
+        color: #050d18;
+        margin-bottom: 0.8rem;
+    }
+    .employer{
+        font-style: italic;
+        font-size: 1.2rem;
+    }
+    .expCatTitle{
+        font-size: .9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    ul{
+        text-align: justify;
+        font-size: 1.2rem;
+    }
+}

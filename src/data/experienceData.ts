@@ -1,8 +1,25 @@
-export const experienceData = [
+interface ExperienceDataEleIntf{
+    title: string,
+    city: string,
+    startDate: Date,
+    endDate: Date|null,
+    employer: string,
+    ifCurrentCompany: boolean,
+    projectUrl: string,
+    techUsed: string,
+    responsibility: string[]
+}
+interface EducationDataEleIntf{
+    university:string,
+    degree:string,
+    country: string,
+    graduationDate:Date
+}
+const experienceData:ExperienceDataEleIntf[] = [
     {
         title:"Senior Full Stack Developer",
         city:"Turku, Finland",
-        startDate:'2020-05-01T00:00:01.787Z',
+        startDate:new Date('2020-05-01T00:00:01.787Z'),
         endDate:null,
         employer:"Webaitio Oy",
         ifCurrentCompany:true,
@@ -32,8 +49,8 @@ export const experienceData = [
     {
         title:"Full Stack Developer",
         city:"Pune, India",
-        startDate:'2018-01-01T00:00:01.787Z',
-        endDate:'2020-05-01T00:00:01.787Z',
+        startDate:new Date('2018-01-01T00:00:01.787Z'),
+        endDate:new Date('2020-05-01T00:00:01.787Z'),
         employer:"Nuvolo",
         ifCurrentCompany:false,
         projectUrl: "https://www.nuvolo.com/",
@@ -52,8 +69,8 @@ export const experienceData = [
     {
         title:"Full Stack Developer",
         city:"Pune, India",
-        startDate:'2016-04-01T00:00:01.787Z',
-        endDate:'2018-01-01T00:00:01.787Z',
+        startDate:new Date('2016-04-01T00:00:01.787Z'),
+        endDate:new Date('2018-01-01T00:00:01.787Z'),
         employer:"Sears Holdings",
         ifCurrentCompany:false,
         projectUrl: "https://www.sears.com/",
@@ -68,8 +85,8 @@ export const experienceData = [
     {
         title:"Full Stack Developer",
         city:"Pune, India",
-        startDate:'2014-05-01T00:00:01.787Z',
-        endDate:'2016-04-01T00:00:01.787Z',
+        startDate:new Date('2014-05-01T00:00:01.787Z'),
+        endDate:new Date('2016-04-01T00:00:01.787Z'),
         employer:"Capgemini",
         ifCurrentCompany:false,
         projectUrl: "https://www.capgemini.com/",
@@ -84,8 +101,8 @@ export const experienceData = [
     {
         title:"Java Developer",
         city:"Pune, India",
-        startDate:'2011-07-01T00:00:01.787Z',
-        endDate:'2014-04-01T00:00:01.787Z',
+        startDate:new Date('2011-07-01T00:00:01.787Z'),
+        endDate:new Date('2014-04-01T00:00:01.787Z'),
         employer:"iNautix, a BNY Mellon company",
         ifCurrentCompany:false,
         projectUrl: "https://www.bnymellon.com/",
@@ -97,3 +114,40 @@ export const experienceData = [
         ]
     }
 ];
+
+const educationData:EducationDataEleIntf[] = [
+    {
+        university:"University of Eastern Finland and Savonia University of AppliedSciences",
+        country:"Finland",
+        degree:"Medical Computing",
+        graduationDate:new Date('2022-01-01T00:00:01.787Z'),
+    },
+    {
+        university:"Liverpool John Moores University",
+        country:"United Kingdom",
+        degree:"Artificial Intelligence and Machine learning",
+        graduationDate:new Date('2021-01-01T00:00:01.787Z'),
+    },
+    {
+        university:"University of Pune",
+        country:"Pune",
+        degree:"Computer Science and Engineering",
+        graduationDate:new Date('2011-01-01T00:00:01.787Z'),
+    }
+];
+
+const skills:string[] = [
+    "Project Management",
+    "Full Stack development",
+    "Javascript/Typescript",
+    "React, React-native",
+    "Angularjs, Angular",
+    "HTML, CSS",
+    "System Design, System Architecture, Design Patterns and Principles",
+    "docker, kubernetes, aws",
+    "Agile Scrum",
+    "RESTful Web Services, Nodejs, Nestjs, Sprint, Spring-boot, java",
+    "Databases: Oracle, MongoDB, Postgresql"
+];
+
+export {experienceData, educationData, skills};
