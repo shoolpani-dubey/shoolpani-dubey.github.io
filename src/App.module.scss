@@ -70,6 +70,8 @@ $breakpoint-tablet: 400px;
         @media (min-width:0) and (max-width:400px) {
           border: none;
           border-image: none;
+          font-size: 16px;
+          padding: 8px;
         }
         padding: 2rem;
         border: 1rem solid white;
