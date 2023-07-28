@@ -8,19 +8,8 @@ import { experienceData } from './data/experienceData';
 // import selfPic from '/self_pic.jpeg';
 import {FaLocationDot, FaLinkedinIn} from 'react-icons/fa6';
 import {MdEmail} from 'react-icons/md';
-import selfVideo from '/test.mp4';
 import selfPic from '/self.png';
-import { useRef, useState } from 'react';
 function App() {
-  const videoRef = useRef(null);
-  const [unmuteBtnVisible, setUnmuteBtnVisible]=useState(true);
-  const onUnmute = () => {
-    if(!videoRef?.current)return;
-    const videoEle:HTMLVideoElement = videoRef.current;
-    videoEle.muted = false;
-    setUnmuteBtnVisible(false);
-  };
-
   return (
     <>
     <div id="google_translate_element"></div>
