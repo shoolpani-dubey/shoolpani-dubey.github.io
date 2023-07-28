@@ -130,7 +130,7 @@ const educationData:EducationDataEleIntf[] = [
     },
     {
         university:"University of Pune",
-        country:"Pune",
+        country:"India",
         degree:"Computer Science and Engineering",
         graduationDate:new Date('2011-01-01T00:00:01.787Z'),
     }

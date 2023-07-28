@@ -14,26 +14,6 @@ function App() {
     <>
     <div id="google_translate_element"></div>
       <div className={appStyle.body}>
-        {/* <div className={appStyle.videoBlock}>
-          <video ref={videoRef} controls autoPlay={true} muted={true}>
-            <source src={selfVideo} type="video/mp4" />
-            Your browser does not support HTML video.
-          </video>
-          {unmuteBtnVisible
-          && <button
-            onClick={onUnmute}
-            className={appStyle.videoUnmute}>Unmute</button>}
-        </div> */}
-        {/* <div className={appStyle.firstBlock}>
-          <img className={appStyle.picImg} src={selfPic} alt="user picture"/>
-          <div className={appStyle.picDesc}>
-            <h1 className={appStyle.h1}>Shoolpani Dubey</h1>
-            <div className={appStyle.h2}>Senior Fullstack Developer</div>
-            <div className={appStyle.h3}><FaLocationDot/><label className={appStyle.h3Label}>Turku, Finland</label></div>
-            <div className={appStyle.h3}><FaLinkedinIn/><a className={appStyle.h3Label} target='_blank' href={'https://www.linkedin.com/in/shoolpani-dubey-74638824/'}>https://www.linkedin.com/in/shoolpani-dubey-74638824/</a></div>
-            <div className={appStyle.h3}><MdEmail/><a className={appStyle.h3Label} href={'mailto:shool.pani.dubey@gmail.com'}>shool.pani.dubey@gmail.com</a></div>
-          </div>
-        </div> */}
         <div className={appStyle.picBlock}>
           <div className={appStyle.textDiv}>
             <div className={appStyle.textCntr}>

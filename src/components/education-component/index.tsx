@@ -1,5 +1,6 @@
 import { educationData } from "../../data/experienceData";
-
+import { formatDate } from "../../util/utilFun";
+import style from './index.module.scss';
 interface EducationDataEleIntf{
     university:string,
     degree:string,
@@ -9,13 +10,13 @@ interface EducationDataEleIntf{
 
 export default function EducationComponent(){
     return <>
-        {educationData.map((e:EducationDataEleIntf)=><>
-            <div>
+        {educationData.map((e:EducationDataEleIntf)=><div className={style.wrapper}>
+            <div className={style.title}>
                 <label>{e.university}</label>
-                <label>{`(${e.country})`}</label>
-                <label>{`, ${e.graduationDate}`}</label>
+                <label>{`, ${e.country} `}</label>
+                <label>{`( ${formatDate(e.graduationDate)} )`}</label>
             </div>
-            <label>{e.degree}</label>
-        </>)}
+            <label className={style.subtitle}>{e.degree}</label>
+        </div>)}
     </>;
 }

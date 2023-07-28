@@ -1,3 +1,4 @@
+import { formatDate } from '../../util/utilFun';
 import style from './index.module.scss';
 interface ExperienceDataEleIntf{
     title: string,
@@ -14,17 +15,7 @@ interface ExperienceDataIntf{
     data:ExperienceDataEleIntf[]
 }
 export default function ExperienceComponent(props:ExperienceDataIntf){
-    const monthNames:string[] = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-    ];
-    const formatDate = (data:Date|null)=>{
-        if(!data){
-            return '';
-        }
-        const month = monthNames[data.getMonth()];
-        const year = data.getFullYear();
-        return `${month}, ${year}`;
-    }
+    
     return <>
         {props.data.map((e:ExperienceDataEleIntf)=><div key={e.startDate.getTime()} className={style.expCont}>
             <div className={style.expTitle}><label>{e.title}</label><label> ( {`${formatDate(e.startDate)} - `+(e.ifCurrentCompany?"Current":formatDate(e.endDate))} )</label></div>

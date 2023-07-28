@@ -1,8 +1,8 @@
-.expCont{
+.wrapper{
     padding: 2rem 1rem;
     line-height: 1.5rem;
-    font-size: 1.2rem;
-    .expTitle{
+    font-size: 1rem;
+    .title{
         font-size: 1.2rem;
         font-weight: 600;
         text-transform: uppercase;
@@ -10,20 +10,8 @@
         color: #050d18;
         margin-bottom: 0.8rem;
     }
-    .employer{
+    .subtitle{
         font-style: italic;
         font-size: 1.2rem;
-    }
-    .expCatTitle{
-        font-size: 1rem;
-        font-weight: 600;
-        text-transform: uppercase;
-    }
-    ul{
-        text-align: justify;
-        font-size: 1.2rem;
-        li{
-            font-size: 1.2rem;
-        }
     }
 }

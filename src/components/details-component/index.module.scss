@@ -1,4 +1,7 @@
 .wrapper{
+    @media (min-width:0) and (max-width:800px) {
+        padding: 1rem;
+    }
     padding: 6rem;
     border-bottom: 1px solid lightgrey;
     .title{
