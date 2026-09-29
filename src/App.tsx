@@ -3,6 +3,7 @@ import EducationComponent from './components/education-component';
 import ExperienceComponent from './components/experience-component';
 import SkillsComponent from './components/skills-component';
 import SummaryComponent from './components/summary-component';
+import ContactComponent from './components/contact-component';
 import { educationData, experienceData } from './data/experienceData';
 import { FaLocationDot, FaLinkedinIn } from 'react-icons/fa6';
 import { MdEmail } from 'react-icons/md';
@@ -13,6 +14,7 @@ const sections = [
   { id: 'skills', title: 'Skills' },
   { id: 'experience', title: 'Experience' },
   { id: 'education', title: 'Education' },
+  { id: 'contact', title: 'Contact' },
 ];
 
 // React 18 has no types for the popover API; these pass straight through to the DOM.
@@ -27,6 +29,7 @@ const closeNavMenu = () => {
 };
 
 const firstJob = experienceData[experienceData.length - 1].startDate;
+const companyCount = new Set(experienceData.map((e) => e.employer)).size;
 const yearsOfExperience = new Date().getFullYear() - firstJob.getFullYear();
 
 function App() {
@@ -55,8 +58,9 @@ function App() {
             <p className="site-hero__role">Software Architect</p>
             <p className="site-hero__location"><FaLocationDot aria-hidden="true" /> Helsinki, Finland</p>
             <div className="site-hero__actions">
-              <a className="tp-button tp-button--primary" href="mailto:shool.pani.dubey@gmail.com">
-                <MdEmail aria-hidden="true" /> Email me
+              <a className="tp-button tp-button--primary" href="#contact">Send a message</a>
+              <a className="tp-button" href="mailto:shool.pani.dubey@gmail.com">
+                <MdEmail aria-hidden="true" /> Email
               </a>
               <a className="tp-button" href="https://www.linkedin.com/in/shoolpani-dubey-74638824/" target="_blank" rel="noreferrer">
                 <FaLinkedinIn aria-hidden="true" /> LinkedIn
@@ -74,7 +78,7 @@ function App() {
           </div>
           <div className="tp-stat">
             <dt className="tp-stat__key">Companies</dt>
-            <dd className="tp-stat__value">{experienceData.length}</dd>
+            <dd className="tp-stat__value">{companyCount}</dd>
             <dd className="tp-stat__note">Across Finland and India</dd>
           </div>
           <div className="tp-stat">
@@ -95,6 +99,9 @@ function App() {
         </DetailsComponent>
         <DetailsComponent id="education" index={4} title="Education">
           <EducationComponent />
+        </DetailsComponent>
+        <DetailsComponent id="contact" index={5} title="Contact">
+          <ContactComponent />
         </DetailsComponent>
       </main>
 

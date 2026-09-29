@@ -157,6 +157,25 @@ main {
   gap: var(--space-5);
 }
 
+/* Contact form */
+.site-contact {
+  max-width: 44rem;
+}
+
+.site-contact .tp-field {
+  --field-max: none;
+}
+
+.site-contact__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--space-5);
+}
+
+.site-contact__feedback > :not(:empty) {
+  margin-top: var(--space-5);
+}
+
 .site-footer {
   max-width: var(--container-max);
   margin: 0 auto;

@@ -6,7 +6,7 @@ interface ExperienceDataEleIntf{
     employer: string,
     ifCurrentCompany: boolean,
     projectUrl: string,
-    techUsed: string,
+    techUsed?: string,
     responsibility: string[]
 }
 interface EducationDataEleIntf{
@@ -17,12 +17,48 @@ interface EducationDataEleIntf{
 }
 const experienceData:ExperienceDataEleIntf[] = [
     {
+        title:"Software Architect",
+        city:"Helsinki, Finland",
+        startDate:new Date('2026-03-01T00:00:01.787Z'),
+        endDate:null,
+        employer:"SSH Communications Security",
+        ifCurrentCompany:true,
+        projectUrl: "https://www.ssh.com/",
+        responsibility:[
+            "Lead the architecture and evolution of SalaX Secure Messaging, designing secure, scalable and maintainable solutions aligned with product and business objectives.",
+            "Partner closely with product management, customers and engineering teams to shape requirements, identify solution gaps and translate business needs into technical direction.",
+            "Drive system design and architectural decisions across application, backend, integrations and infrastructure.",
+            "Stay hands-on in implementation, prototyping and technical validation when needed.",
+            "Review designs, mentor engineers and establish architectural standards for security, reliability, performance and long-term sustainability.",
+            "Contribute to customer and partner discussions where senior technical expertise is required.",
+            "Support continuous improvement across engineering practices, release quality and technical governance."
+        ]
+    },
+    {
+        title:"Senior Software Engineer",
+        city:"Helsinki, Finland",
+        startDate:new Date('2023-10-01T00:00:01.787Z'),
+        endDate:new Date('2026-02-01T00:00:01.787Z'),
+        employer:"SSH Communications Security",
+        ifCurrentCompany:false,
+        projectUrl: "https://www.ssh.com/",
+        responsibility:[
+            "Designed and implemented backend features, product improvements and installation-related solutions for SalaX Messaging.",
+            "Improved product reliability by resolving backend, deployment and customer environment issues across internal development and proof-of-concept setups.",
+            "Contributed to feature planning and technical design; proactively identified product issues and drove fixes for backend and installation challenges.",
+            "Collaborated with internal stakeholders, support, customers and Element to address current issues, support future planning and improve product quality.",
+            "Explored and applied new technologies to strengthen the product and its delivery model.",
+            "Handled complex customer proof-of-concept installations independently, troubleshooting environment-specific issues and supporting product adoption.",
+            "Guided less senior team members and contributed to a collaborative engineering culture."
+        ]
+    },
+    {
         title:"Senior Full Stack Developer",
         city:"Turku, Finland",
         startDate:new Date('2020-05-01T00:00:01.787Z'),
-        endDate:null,
+        endDate:new Date('2023-09-01T00:00:01.787Z'),
         employer:"Webaitio Oy",
-        ifCurrentCompany:true,
+        ifCurrentCompany:false,
         projectUrl: "https://www.vooler.fi/",
         techUsed:"Typescript, Javascript, React, React-native, Nodejs, NestJs, Postgresql, Springboot, Java, Jhipster, Keycloak, Apache Kafka, Quartz Scheduler, Hazelcast cache, Swagger, Liquibase, Docker, AWS EC2, AWS S3, DigitalOcean",
         responsibility:[
@@ -47,9 +83,9 @@ const experienceData:ExperienceDataEleIntf[] = [
         ]
     },
     {
-        title:"Full Stack Developer",
+        title:"UI/UX Innovation Lead",
         city:"Pune, India",
-        startDate:new Date('2018-01-01T00:00:01.787Z'),
+        startDate:new Date('2018-02-01T00:00:01.787Z'),
         endDate:new Date('2020-05-01T00:00:01.787Z'),
         employer:"Nuvolo",
         ifCurrentCompany:false,
@@ -67,11 +103,11 @@ const experienceData:ExperienceDataEleIntf[] = [
         ]
     },
     {
-        title:"Full Stack Developer",
+        title:"Senior Technical Associate",
         city:"Pune, India",
         startDate:new Date('2016-04-01T00:00:01.787Z'),
         endDate:new Date('2018-01-01T00:00:01.787Z'),
-        employer:"Sears Holdings",
+        employer:"Sears India",
         ifCurrentCompany:false,
         projectUrl: "https://www.sears.com/",
         techUsed:"Javascript,Angular, Nodejs, ExpressJs, Spring-boot, Java, Mongodb",
@@ -83,7 +119,7 @@ const experienceData:ExperienceDataEleIntf[] = [
         ]
     },
     {
-        title:"Full Stack Developer",
+        title:"Associate Consultant",
         city:"Pune, India",
         startDate:new Date('2014-05-01T00:00:01.787Z'),
         endDate:new Date('2016-04-01T00:00:01.787Z'),
@@ -95,7 +131,8 @@ const experienceData:ExperienceDataEleIntf[] = [
             "Worked on enhancement and development of various web applications for Barclays Credit Card division using Java and Spring Webflow",
             "Implemented various credit card work-flow applications, to help Barclays run successful campaigns",
             "Worked on enhancing the UI as per the UX guidelines and front-end development using Javascript, CSS3, Html5 and AnuglarJs",
-            "Took complete ownership of barclays portugal credit card campaign solution and helped run successful campaigns."
+            "Took complete ownership of barclays portugal credit card campaign solution and helped run successful campaigns.",
+            "Clients: Barclays UK, and Barclaycard Spain and Portugal."
         ]
     },
     {

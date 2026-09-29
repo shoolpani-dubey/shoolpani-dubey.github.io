@@ -8,7 +8,7 @@ interface ExperienceDataEleIntf{
     employer: string,
     ifCurrentCompany: boolean,
     projectUrl: string,
-    techUsed: string,
+    techUsed?: string,
     responsibility: string[]
 }
 interface ExperienceDataIntf{
@@ -30,9 +30,9 @@ export default function ExperienceComponent(props:ExperienceDataIntf){
                 <p className="site-meta">
                     <a href={e.projectUrl} target="_blank" rel="noreferrer">{e.employer}</a> · {e.city}
                 </p>
-                <ul className="site-tags" aria-label="Tech used">
+                {e.techUsed && <ul className="site-tags" aria-label="Tech used">
                     {e.techUsed.split(',').map((t)=>t.trim()).filter(Boolean).map((t)=><li key={t}><span className="tp-pill">{t}</span></li>)}
-                </ul>
+                </ul>}
                 <ul className="site-list">
                     {e.responsibility.map((r:string)=><li key={r}>{r}</li>)}
                 </ul>
