@@ -6,7 +6,6 @@ import SummaryComponent from './components/summary-component';
 import ContactComponent from './components/contact-component';
 import { educationData, experienceData } from './data/experienceData';
 import { FaLocationDot, FaLinkedinIn } from 'react-icons/fa6';
-import { MdEmail } from 'react-icons/md';
 import selfPic from '/self.png';
 
 const sections = [
@@ -59,9 +58,6 @@ function App() {
             <p className="site-hero__location"><FaLocationDot aria-hidden="true" /> Helsinki, Finland</p>
             <div className="site-hero__actions">
               <a className="tp-button tp-button--primary" href="#contact">Send a message</a>
-              <a className="tp-button" href="mailto:shool.pani.dubey@gmail.com">
-                <MdEmail aria-hidden="true" /> Email
-              </a>
               <a className="tp-button" href="https://www.linkedin.com/in/shoolpani-dubey-74638824/" target="_blank" rel="noreferrer">
                 <FaLinkedinIn aria-hidden="true" /> LinkedIn
               </a>
