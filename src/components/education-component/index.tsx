@@ -1,6 +1,5 @@
 import { educationData } from "../../data/experienceData";
-import { formatDate } from "../../util/utilFun";
-import style from './index.module.scss';
+
 interface EducationDataEleIntf{
     university:string,
     degree:string,
@@ -9,14 +8,11 @@ interface EducationDataEleIntf{
 }
 
 export default function EducationComponent(){
-    return <>
-        {educationData.map((e:EducationDataEleIntf)=><div className={style.wrapper}>
-            <div className={style.title}>
-                <label>{e.university}</label>
-                <label>{`, ${e.country} `}</label>
-                <label>{`( ${formatDate(e.graduationDate)} )`}</label>
-            </div>
-            <label className={style.subtitle}>{e.degree}</label>
-        </div>)}
-    </>;
+    return <div className="site-grid">
+        {educationData.map((e:EducationDataEleIntf)=><article key={e.university} className="tp-card">
+            <p className="tp-eyebrow"><time dateTime={String(e.graduationDate.getFullYear())}>{e.graduationDate.getFullYear()}</time> · {e.country}</p>
+            <h3 className="tp-card__title">{e.degree}</h3>
+            <p className="tp-card__body">{e.university}</p>
+        </article>)}
+    </div>;
 }

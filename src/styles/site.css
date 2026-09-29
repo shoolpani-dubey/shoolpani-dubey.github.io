@@ -1,0 +1,205 @@
+/*
+ * Site layout on top of Tokyo Paper. Every value comes from a design token.
+ */
+
+main {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Hero */
+.site-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+  align-items: end;
+  gap: var(--space-7);
+  padding-block: var(--space-9) var(--space-7);
+  background-image:
+    linear-gradient(var(--paper-grid) var(--line-width), transparent var(--line-width)),
+    linear-gradient(90deg, var(--paper-grid) var(--line-width), transparent var(--line-width));
+  background-size: var(--space-6) var(--space-6);
+}
+
+.site-hero h1 {
+  margin-bottom: var(--space-4);
+}
+
+.site-hero__role {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--accent);
+}
+
+.site-hero__location {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-6);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--ink-2);
+}
+
+.site-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.site-hero__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: var(--line-width) solid var(--line-strong);
+  background: var(--paper-raised);
+}
+
+.site-stats {
+  margin-bottom: var(--space-8);
+}
+
+/* Sections: number + heading on the left, content on the right */
+.site-section {
+  display: grid;
+  grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+  gap: var(--space-6);
+  padding-block: var(--space-7);
+  border-top: var(--line-width) solid var(--line);
+}
+
+.site-section__head {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-5));
+  align-self: start;
+}
+
+.site-section__head h2 {
+  margin: 0;
+}
+
+.site-prose {
+  font-size: var(--text-lg);
+  color: var(--ink-2);
+}
+
+/* Tag lists */
+.site-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Long skill names wrap instead of pushing the page sideways */
+.site-tags .tp-pill {
+  white-space: normal;
+  padding-block: var(--space-1);
+  line-height: var(--leading-snug);
+}
+
+/* Experience timeline: cards hung off a hairline rule */
+.site-timeline {
+  display: grid;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0 0 0 var(--space-5);
+  border-left: var(--line-width) solid var(--line-strong);
+  list-style: none;
+}
+
+.site-timeline > li {
+  position: relative;
+}
+
+.site-timeline > li::before {
+  content: "";
+  position: absolute;
+  top: var(--space-5);
+  left: calc(-1 * var(--space-5) - var(--space-1) - var(--line-width) / 2);
+  width: var(--space-2);
+  height: var(--space-2);
+  background: var(--accent);
+}
+
+.site-timeline > li:first-child .tp-card {
+  border-color: var(--accent-line);
+}
+
+.site-meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--ink-2);
+}
+
+.site-list {
+  padding-left: var(--space-5);
+  color: var(--ink-2);
+  max-width: var(--measure);
+}
+
+.site-list li + li {
+  margin-top: var(--space-1);
+}
+
+.site-list li::marker {
+  color: var(--accent);
+}
+
+.site-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--space-5);
+}
+
+.site-footer {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-6) var(--gutter);
+  border-top: var(--line-width) solid var(--line);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--ink-3);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* Tablet and phone */
+@media (width < 900px) {
+  .site-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-4);
+  }
+
+  .site-section__head {
+    position: static;
+  }
+}
+
+@media (width < 640px) {
+  .site-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+    padding-block: var(--space-7) var(--space-6);
+  }
+
+  .site-hero__photo {
+    grid-row: 1;
+    width: min(100%, 12rem);
+  }
+
+  .site-timeline {
+    padding-left: var(--space-4);
+  }
+
+  .site-timeline > li::before {
+    left: calc(-1 * var(--space-4) - var(--space-1) - var(--line-width) / 2);
+  }
+}

@@ -1,5 +1,5 @@
 import { formatDate } from '../../util/utilFun';
-import style from './index.module.scss';
+
 interface ExperienceDataEleIntf{
     title: string,
     city: string,
@@ -14,21 +14,29 @@ interface ExperienceDataEleIntf{
 interface ExperienceDataIntf{
     data:ExperienceDataEleIntf[]
 }
+
 export default function ExperienceComponent(props:ExperienceDataIntf){
-    
-    return <>
-        {props.data.map((e:ExperienceDataEleIntf)=><div key={e.startDate.getTime()} className={style.expCont}>
-            <div className={style.expTitle}><label>{e.title}</label><label> ( {`${formatDate(e.startDate)} - `+(e.ifCurrentCompany?"Current":formatDate(e.endDate))} )</label></div>
-            <div className={style.employer}><label>{e.employer}</label><label> ( {e.city} )</label></div>
-            <div><label className={style.expCatTitle}>Project Url:</label><label>{e.projectUrl}</label></div>
-            <div><label className={style.expCatTitle}>Tech Used:</label><label>{e.techUsed}</label></div>
-            <div><label className={style.expCatTitle}>Responsibilities:</label>
-            <ul>{e.responsibility.map((e:string)=><li>
-                {e}
-            </li>)}
-            </ul>
-            </div>
-        </div>)
-        }
-    </>;
+    return <ol className="site-timeline">
+        {props.data.map((e:ExperienceDataEleIntf)=><li key={e.startDate.getTime()}>
+            <article className="tp-card">
+                <p className="tp-eyebrow">
+                    <time dateTime={e.startDate.toISOString().slice(0, 7)}>{formatDate(e.startDate)}</time>
+                    {' – '}
+                    {e.ifCurrentCompany || !e.endDate
+                        ? 'Present'
+                        : <time dateTime={e.endDate.toISOString().slice(0, 7)}>{formatDate(e.endDate)}</time>}
+                </p>
+                <h3 className="tp-card__title">{e.title}</h3>
+                <p className="site-meta">
+                    <a href={e.projectUrl} target="_blank" rel="noreferrer">{e.employer}</a> · {e.city}
+                </p>
+                <ul className="site-tags" aria-label="Tech used">
+                    {e.techUsed.split(',').map((t)=>t.trim()).filter(Boolean).map((t)=><li key={t}><span className="tp-pill">{t}</span></li>)}
+                </ul>
+                <ul className="site-list">
+                    {e.responsibility.map((r:string)=><li key={r}>{r}</li>)}
+                </ul>
+            </article>
+        </li>)}
+    </ol>;
 }

@@ -1,0 +1,17 @@
+/*
+ * Tokyo Paper Design System — entry point (vendored subset).
+ * Copied from tokyo-paper-design-system/src; update by re-copying, don't edit in place.
+ * Everything sits in the tokyo-paper layer, so app styles (unlayered)
+ * override it without !important.
+ */
+
+@layer tokyo-paper.tokens, tokyo-paper.theme, tokyo-paper.base, tokyo-paper.components;
+
+@import url("tokens.css") layer(tokyo-paper.tokens);
+@import url("theme.css") layer(tokyo-paper.theme);
+@import url("base.css") layer(tokyo-paper.base);
+@import url("components/button/button.css") layer(tokyo-paper.components);
+@import url("components/card/card.css") layer(tokyo-paper.components);
+@import url("components/pill/pill.css") layer(tokyo-paper.components);
+@import url("components/stat/stat.css") layer(tokyo-paper.components);
+@import url("components/nav/nav.css") layer(tokyo-paper.components);

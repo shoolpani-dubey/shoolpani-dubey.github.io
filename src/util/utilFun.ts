@@ -7,7 +7,7 @@ const formatDate = (data:Date|null)=>{
     }
     const month = monthNames[data.getMonth()];
     const year = data.getFullYear();
-    return `${month}, ${year}`;
+    return `${month} ${year}`;
 }
 
 export {formatDate};

@@ -117,7 +117,7 @@ const experienceData:ExperienceDataEleIntf[] = [
 
 const educationData:EducationDataEleIntf[] = [
     {
-        university:"University of Eastern Finland and Savonia University of AppliedSciences",
+        university:"University of Eastern Finland and Savonia University of Applied Sciences",
         country:"Finland",
         degree:"Medical Computing",
         graduationDate:new Date('2022-01-01T00:00:01.787Z'),
